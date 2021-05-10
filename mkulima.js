@@ -69,12 +69,13 @@ removeFarm(farmId){
 
 //  updateFarm - params: farmId, name, farmer, phone, address
 updateFarm(farmId,name,farmer,phone,address){
-    var updateby=farmId
-    for(var i=0;i<=this.farms.length;i++){
-    for(var object of this.farms){
-        if (updateby==farmId){
-            return this.farms.splice(i,i,updateby)
-           }   }}}
+    this.farms.name=name;
+    this.farms.farmer=farmer;
+    this.farms.farmId=farmId;
+    this.farms.phone=phone;
+    this.farms.address=address;
+var updates={farmId,name,phone,address}
+return updates;}
 
 addProduct(productId, name, price) {
         return this.products.push({ name, price, productId })
@@ -88,12 +89,13 @@ removeProduct(productId){
                     }}}}
     }
 updateProduct(productId,name,price){
-        var updateby=productId
-        for(var i=0;i<=this.products.length;i++){
-        for(var object of this.products){
-            if (updateby==productId){
-                return this.farms.splice(i,i,updateby)
-               }   }}}
+    this.products.name=name;
+    this.products.price=price;
+    this.products.productId=productId;
+var updates={productId,name,price}
+return updates;
+    
+}
 
 getProduct(productId) {
         
