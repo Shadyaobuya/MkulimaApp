@@ -1,32 +1,19 @@
 
-// Create a class Mkulima that will keep a list of farms, grocery vendors and products. 
-// A single farm record should contain id, farm name, farmer, phone number and address. A single 
-// grocery vendor record should contain id, store name and phone number. A product should have id, 
-// name and price fields. 
-// Users of the system should be able to:
-//  addFarm - params: farmId, name, farmer, phone, address
-//  removeFarm - params: farmId
-//  updateFarm - params: farmId, name, farmer, phone, address
-//  getFarm - params: farmId - returns a farm object
-//  addProduct - params: productId, name, price
-//  removeProduct - params: productId
-//  updateProduct - params: productId, name, price
-//  getProduct - params: productId - returns a product object
-//  printProducts - No param, console logs a list of product items with their prices.
-// calculateOrderCost - params: productId, quantity
-
 class Mkulima {
 
     constructor() {
         this.farms = [];
         this.products = [];
-        this.orders = [];
+        this.vendors = [];
 
     }
-    //   login(){
+    //Add new farms object
+      login(name, farmId, farmer, address){
+        return this.farms.push({ name, farmId, farmer, address })
 
 
-    //   }
+
+      }
     //   signup(){
 
     //   }
@@ -43,15 +30,9 @@ class Mkulima {
                 if(vals==farmId){
                     // return `${Object.entries(object)}`
                     return `${Object.keys(object)}:${Object.values(object)}`
-
-
                 }
-                
-                
             }
         }
-
-        
         }
 }
 removeFarm(farmId){
@@ -135,6 +116,8 @@ getProduct(productId) {
 }
 
 var listfarms = new Mkulima()
+
+listfarms.login(name = "shamba", farmId = 89, farmer = "Wendy", address = 765)
 listfarms.addFarm(name = "mkulima", farmId = 2222, farmer = "Juliet", address = 23456)
 listfarms.addFarm(name = "mkua", farmId = 999, farmer = "Joji", address = 23)
 listfarms.addFarm(name = "fama", farmId = 22, farmer = "Sindet", address = 56)
